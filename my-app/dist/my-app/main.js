@@ -37,6 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _duty_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./duty-data */ "./src/app/duty-data.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46,6 +47,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -78,7 +80,12 @@ var ApiService = /** @class */ (function () {
         return body || {};
     };
     ApiService.prototype.getBooks = function () {
-        return this.http.get(apiUrl, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.extractData), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+        /*
+        return this.http.get(apiUrl, httpOptions).pipe(
+          map(this.extractData),
+          catchError(this.handleError));
+          */
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_duty_data__WEBPACK_IMPORTED_MODULE_4__["ROWS"]);
     };
     ApiService.prototype.getBook = function (id) {
         var url = apiUrl + "/" + id;
@@ -556,6 +563,32 @@ var BookComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/duty-data.ts":
+/*!******************************!*\
+  !*** ./src/app/duty-data.ts ***!
+  \******************************/
+/*! exports provided: ROWS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ROWS", function() { return ROWS; });
+var ROWS = [
+    { id: 11, name: 'Mr. Nice', position: 1, puntuation: 90 },
+    { id: 12, name: 'Narco', position: 1, puntuation: 90 },
+    { id: 13, name: 'Bombasto', position: 2, puntuation: 80 },
+    { id: 14, name: 'Celeritas', position: 3, puntuation: 40 },
+    { id: 15, name: 'Magneta', position: 4, puntuation: 20 },
+    { id: 16, name: 'RubberMan', position: 5, puntuation: 10 },
+    { id: 17, name: 'Dynama', position: 6, puntuation: 90 },
+    { id: 18, name: 'Dr IQ', position: 7, puntuation: 90 },
+    { id: 19, name: 'Magma', position: 1, puntuation: 90 },
+    { id: 20, name: 'Tornado', position: 1, puntuation: 90 }
+];
+
+
+/***/ }),
+
 /***/ "./src/app/main/main.component.css":
 /*!*****************************************!*\
   !*** ./src/app/main/main.component.css ***!
@@ -637,7 +670,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"rows\">\n<ul>\n  <li *ngFor=\"let row of rows\">\n      <span>{{row.name}}</span> {{row.id}}\n  </li>\n</ul>\n"
+module.exports = "<div *ngIf=\"rows\">\n<table class=\"table table-hover\">\n  <thead>\n    <tr>\n      <th scope=\"col-2\">Position</th>\n      <th scope=\"col-8\">Name</th>\n      <th scope=\"col-2\">Puntuation</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr class=\"table-primary\" *ngFor=\"let row of rows\">\n      <td>{{row.position}}</td>\n      <td>{{row.name}}</td>\n      <td>{{row.puntuation}}</td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 

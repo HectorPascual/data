@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
+import { ROWS } from './duty-data'
 
 
 
@@ -40,32 +41,38 @@ export class ApiService {
   }
 
   getBooks(): Observable<any> {
+    /*
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
+      */    
+      return of(ROWS)
   }
-  
+
   getBook(id: string): Observable<any> {
+
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
+
+
   }
-  
+
   postBook(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
-  
+
   updateBook(data): Observable<any> {
     return this.http.put(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
-  
+
   deleteBook(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
