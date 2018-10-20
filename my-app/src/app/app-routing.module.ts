@@ -1,9 +1,13 @@
+
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BookComponent } from './book/book.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
+import { MainComponent } from './main/main.component';
+
 const routes: Routes = [
   {
     path: 'books',
@@ -25,8 +29,13 @@ const routes: Routes = [
     component: BookEditComponent,
     data: { title: 'Edit Book' }
   },
+  {
+    path: 'main',
+    component: MainComponent,
+    data: { title: 'Main component' }
+  },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/main',
     pathMatch: 'full'
   }
 ];

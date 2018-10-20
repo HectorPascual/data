@@ -128,7 +128,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Test router</h1>\n<router-outlet></router-outlet>"
+module.exports = "<h1>DataForm the platform for the data</h1>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -190,6 +190,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ranking/ranking.component */ "./src/app/ranking/ranking.component.ts");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -208,7 +211,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var appRoutes = [
+
+
+
+var routes = [
     {
         path: 'books',
         component: _book_book_component__WEBPACK_IMPORTED_MODULE_3__["BookComponent"],
@@ -229,8 +235,13 @@ var appRoutes = [
         component: _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_6__["BookEditComponent"],
         data: { title: 'Edit Book' }
     },
+    {
+        path: 'main',
+        component: _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
+        data: { title: 'Main component' }
+    },
     { path: '',
-        redirectTo: '/books',
+        redirectTo: '/main',
         pathMatch: 'full'
     }
 ];
@@ -245,9 +256,12 @@ var AppModule = /** @class */ (function () {
                 _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_4__["BookDetailComponent"],
                 _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_5__["BookCreateComponent"],
                 _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_6__["BookEditComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
+                _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_13__["RankingComponent"],
+                _upload_upload_component__WEBPACK_IMPORTED_MODULE_14__["UploadComponent"],
             ],
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoutes),
+                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(routes),
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
@@ -566,6 +580,195 @@ var BookDataSource = /** @class */ (function (_super) {
     };
     return BookDataSource;
 }(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_2__["DataSource"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/main.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/main/main.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vbWFpbi5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/main/main.component.html":
+/*!******************************************!*\
+  !*** ./src/app/main/main.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-ranking></app-ranking>\n<app-upload></app-upload>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/main.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/main/main.component.ts ***!
+  \****************************************/
+/*! exports provided: MainComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MainComponent = /** @class */ (function () {
+    function MainComponent() {
+    }
+    MainComponent.prototype.ngOnInit = function () {
+    };
+    MainComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-main',
+            template: __webpack_require__(/*! ./main.component.html */ "./src/app/main/main.component.html"),
+            styles: [__webpack_require__(/*! ./main.component.css */ "./src/app/main/main.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainComponent);
+    return MainComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ranking/ranking.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/ranking/ranking.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JhbmtpbmcvcmFua2luZy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/ranking/ranking.component.html":
+/*!************************************************!*\
+  !*** ./src/app/ranking/ranking.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  ranking works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/ranking/ranking.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/ranking/ranking.component.ts ***!
+  \**********************************************/
+/*! exports provided: RankingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RankingComponent", function() { return RankingComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var RankingComponent = /** @class */ (function () {
+    function RankingComponent() {
+    }
+    RankingComponent.prototype.ngOnInit = function () {
+    };
+    RankingComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-ranking',
+            template: __webpack_require__(/*! ./ranking.component.html */ "./src/app/ranking/ranking.component.html"),
+            styles: [__webpack_require__(/*! ./ranking.component.css */ "./src/app/ranking/ranking.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], RankingComponent);
+    return RankingComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/upload/upload.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VwbG9hZC91cGxvYWQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/upload/upload.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  upload works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/upload/upload.component.ts ***!
+  \********************************************/
+/*! exports provided: UploadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadComponent", function() { return UploadComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UploadComponent = /** @class */ (function () {
+    function UploadComponent() {
+    }
+    UploadComponent.prototype.ngOnInit = function () {
+    };
+    UploadComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-upload',
+            template: __webpack_require__(/*! ./upload.component.html */ "./src/app/upload/upload.component.html"),
+            styles: [__webpack_require__(/*! ./upload.component.css */ "./src/app/upload/upload.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], UploadComponent);
+    return UploadComponent;
+}());
 
 
 

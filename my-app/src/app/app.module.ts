@@ -22,8 +22,12 @@ import {
   MatCardModule,
   MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainComponent } from './main/main.component';
+import { RankingComponent } from './ranking/ranking.component';
+import { UploadComponent } from './upload/upload.component';
+import { RowComponent } from './row/row.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
   {
     path: 'books',
     component: BookComponent,
@@ -44,8 +48,13 @@ const appRoutes: Routes = [
     component: BookEditComponent,
     data: { title: 'Edit Book' }
   },
+  {
+    path: 'main',
+    component: MainComponent,
+    data: { title: 'Main component' }
+  },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/main',
     pathMatch: 'full'
   }
 ];
@@ -57,9 +66,13 @@ const appRoutes: Routes = [
     BookDetailComponent,
     BookCreateComponent,
     BookEditComponent,
+    MainComponent,
+    RankingComponent,
+    UploadComponent,
+    RowComponent,
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
