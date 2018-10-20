@@ -670,7 +670,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"rows\">\n<table class=\"table table-hover\">\n  <thead>\n    <tr>\n      <th scope=\"col-2\">Position</th>\n      <th scope=\"col-8\">Name</th>\n      <th scope=\"col-2\">Puntuation</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr class=\"table-primary\" *ngFor=\"let row of rows\">\n      <td>{{row.position}}</td>\n      <td>{{row.name}}</td>\n      <td>{{row.puntuation}}</td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "\n<div class=\"container\">\n  <div *ngIf=\"rows\">\n  <table class=\"table table-primary\">\n    <thead>\n      <tr>\n        <th scope=\"col\">#</th>\n        <th scope=\"col\">name</th>\n        <th scope=\"col\">puntuation</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr class=\"table-primary\" *ngFor=\"let row of rows\">\n        <th scope=\"row\">{{row.position}}</th>\n        <td>{{row.name}}</td>\n        <td>{{row.puntuation}}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
 
 /***/ }),
 
