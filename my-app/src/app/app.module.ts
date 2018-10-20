@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
@@ -26,6 +26,9 @@ import { MainComponent } from './main/main.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { UploadComponent } from './upload/upload.component';
 import { RowComponent } from './row/row.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -39,14 +42,14 @@ const routes: Routes = [
     data: { title: 'Book Details' }
   },
   {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    path: 'register',
+    component: RegisterComponent,
+    data: { title: 'Register' }
   },
   {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   {
     path: 'main',
@@ -70,6 +73,9 @@ const routes: Routes = [
     RankingComponent,
     UploadComponent,
     RowComponent,
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
