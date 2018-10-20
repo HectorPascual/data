@@ -810,7 +810,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  upload works!\n</p>\n"
+module.exports = "\n<div class=\"container jumbotron\">\n  <form>\n    <div class=\"row\">\n      <div class=\"col-md-4 form-group\">\n        <label for=\"exampleInputEmail1\">Upload your results!</label>\n        <input class=\"form-control\" placeholder=\"Your name\">\n        <small id=\"emailHelp\" class=\"form-text text-muted\">Remember to only upload the result column</small>\n        <label for=\"exampleInputFile\">File input</label>\n        <input class=\"form-control-file\" aria-describedby=\"fileHelp\" type=\"file\">\n      </div>\n      <div class=\"col-md-8 text-right\">\n        <button id=\"singlebutton\" name=\"singlebutton\" class=\"btn btn-primary\">Next Step!</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<br>\n"
 
 /***/ }),
 
@@ -825,6 +825,7 @@ module.exports = "<p>\n  upload works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadComponent", function() { return UploadComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -835,10 +836,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var UploadComponent = /** @class */ (function () {
-    function UploadComponent() {
+    function UploadComponent(router) {
+        this.router = router;
+        this.fileToUpload = null;
+        this.name = null;
     }
-    UploadComponent.prototype.ngOnInit = function () {
+    UploadComponent.prototype.handleFileInput = function (files, name) {
+        this.fileToUpload = files.item(0);
+        this.name = name.value;
+    };
+    UploadComponent.prototype.onClickMe = function () {
+        //code on submit
+        console.log('Submitted');
+        console.log(this.name);
+        console.log(this.fileToUpload);
     };
     UploadComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -846,7 +859,7 @@ var UploadComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./upload.component.html */ "./src/app/upload/upload.component.html"),
             styles: [__webpack_require__(/*! ./upload.component.css */ "./src/app/upload/upload.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], UploadComponent);
     return UploadComponent;
 }());
