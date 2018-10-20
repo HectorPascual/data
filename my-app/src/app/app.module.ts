@@ -22,6 +22,7 @@ import {
   MatCardModule,
   MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UploadComponent } from './upload/upload.component';
 
 const appRoutes: Routes = [
   {
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     BookDetailComponent,
     BookCreateComponent,
     BookEditComponent,
+    UploadComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
