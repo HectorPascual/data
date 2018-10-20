@@ -195,15 +195,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
-/* harmony import */ var _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ranking/ranking.component */ "./src/app/ranking/ranking.component.ts");
-/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
-/* harmony import */ var _row_row_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./row/row.component */ "./src/app/row/row.component.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ranking/ranking.component */ "./src/app/ranking/ranking.component.ts");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
+/* harmony import */ var _row_row_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./row/row.component */ "./src/app/row/row.component.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -213,7 +212,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 //import { AppRoutingModule } from './app-routing.module';
-
 
 
 
@@ -243,17 +241,17 @@ var routes = [
     },
     {
         path: 'register',
-        component: _register_register_component__WEBPACK_IMPORTED_MODULE_18__["RegisterComponent"],
+        component: _register_register_component__WEBPACK_IMPORTED_MODULE_17__["RegisterComponent"],
         data: { title: 'Register' }
     },
     {
         path: 'login',
-        component: _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
         data: { title: 'Login' }
     },
     {
         path: 'main',
-        component: _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
+        component: _main_main_component__WEBPACK_IMPORTED_MODULE_11__["MainComponent"],
         data: { title: 'Main component' }
     },
     { path: '',
@@ -272,13 +270,13 @@ var AppModule = /** @class */ (function () {
                 _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__["UserDetailComponent"],
                 _user_create_user_create_component__WEBPACK_IMPORTED_MODULE_5__["UserCreateComponent"],
                 _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_6__["UserEditComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
-                _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_13__["RankingComponent"],
-                _upload_upload_component__WEBPACK_IMPORTED_MODULE_14__["UploadComponent"],
-                _row_row_component__WEBPACK_IMPORTED_MODULE_15__["RowComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
-                _register_register_component__WEBPACK_IMPORTED_MODULE_18__["RegisterComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_11__["MainComponent"],
+                _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_12__["RankingComponent"],
+                _upload_upload_component__WEBPACK_IMPORTED_MODULE_13__["UploadComponent"],
+                _row_row_component__WEBPACK_IMPORTED_MODULE_14__["RowComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
+                _register_register_component__WEBPACK_IMPORTED_MODULE_17__["RegisterComponent"],
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(routes),
@@ -286,16 +284,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatSortModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
