@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-//import { Book } from '../book';
+//import { User } from '../user';
 import { ApiService } from '../api.service';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class BookComponent implements OnInit {
+export class UserComponent implements OnInit {
 
-  books: any;
+  users: any;
 
   displayedColumns = ['id', 'name'];
 
@@ -19,10 +19,10 @@ export class BookComponent implements OnInit {
 
 
   ngOnInit() {
-    this.api.getBooks()
+    this.api.getUsers()
       .subscribe(res => {
         console.log(res);
-        this.books = res;
+        this.users = res;
       }, err => {
         console.log(err);
       });

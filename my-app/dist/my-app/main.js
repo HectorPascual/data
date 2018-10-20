@@ -79,7 +79,7 @@ var ApiService = /** @class */ (function () {
         var body = res;
         return body || {};
     };
-    ApiService.prototype.getBooks = function () {
+    ApiService.prototype.getUsers = function () {
         /*
         return this.http.get(apiUrl, httpOptions).pipe(
           map(this.extractData),
@@ -87,19 +87,19 @@ var ApiService = /** @class */ (function () {
           */
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_duty_data__WEBPACK_IMPORTED_MODULE_4__["ROWS"]);
     };
-    ApiService.prototype.getBook = function (id) {
+    ApiService.prototype.getUser = function (id) {
         var url = apiUrl + "/" + id;
         return this.http.get(url, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.extractData), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
-    ApiService.prototype.postBook = function (data) {
+    ApiService.prototype.postUser = function (data) {
         return this.http.post(apiUrl, data, httpOptions)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
-    ApiService.prototype.updateBook = function (data) {
+    ApiService.prototype.updateUser = function (data) {
         return this.http.put(apiUrl, data, httpOptions)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
-    ApiService.prototype.deleteBook = function (id) {
+    ApiService.prototype.deleteUser = function (id) {
         var url = apiUrl + "/" + id;
         return this.http.delete(url, httpOptions)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
@@ -188,10 +188,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _book_book_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./book/book.component */ "./src/app/book/book.component.ts");
-/* harmony import */ var _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./book-detail/book-detail.component */ "./src/app/book-detail/book-detail.component.ts");
-/* harmony import */ var _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./book-create/book-create.component */ "./src/app/book-create/book-create.component.ts");
-/* harmony import */ var _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./book-edit/book-edit.component */ "./src/app/book-edit/book-edit.component.ts");
+/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user/user.component */ "./src/app/user/user.component.ts");
+/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
+/* harmony import */ var _user_create_user_create_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-create/user-create.component */ "./src/app/user-create/user-create.component.ts");
+/* harmony import */ var _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-edit/user-edit.component */ "./src/app/user-edit/user-edit.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
@@ -232,14 +232,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     {
-        path: 'books',
-        component: _book_book_component__WEBPACK_IMPORTED_MODULE_3__["BookComponent"],
-        data: { title: 'Book List' }
+        path: 'user',
+        component: _user_user_component__WEBPACK_IMPORTED_MODULE_3__["UserComponent"],
+        data: { title: 'User List' }
     },
     {
-        path: 'book-details/:id',
-        component: _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_4__["BookDetailComponent"],
-        data: { title: 'Book Details' }
+        path: 'user-details/:id',
+        component: _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__["UserDetailComponent"],
+        data: { title: 'User Details' }
     },
     {
         path: 'register',
@@ -268,10 +268,10 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
-                _book_book_component__WEBPACK_IMPORTED_MODULE_3__["BookComponent"],
-                _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_4__["BookDetailComponent"],
-                _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_5__["BookCreateComponent"],
-                _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_6__["BookEditComponent"],
+                _user_user_component__WEBPACK_IMPORTED_MODULE_3__["UserComponent"],
+                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__["UserDetailComponent"],
+                _user_create_user_create_component__WEBPACK_IMPORTED_MODULE_5__["UserCreateComponent"],
+                _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_6__["UserEditComponent"],
                 _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
                 _ranking_ranking_component__WEBPACK_IMPORTED_MODULE_13__["RankingComponent"],
                 _upload_upload_component__WEBPACK_IMPORTED_MODULE_14__["UploadComponent"],
@@ -302,271 +302,6 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-create/book-create.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/book-create/book-create.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stY3JlYXRlL2Jvb2stY3JlYXRlLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/book-create/book-create.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/book-create/book-create.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  book-create works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/book-create/book-create.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/book-create/book-create.component.ts ***!
-  \******************************************************/
-/*! exports provided: BookCreateComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookCreateComponent", function() { return BookCreateComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var BookCreateComponent = /** @class */ (function () {
-    function BookCreateComponent() {
-    }
-    BookCreateComponent.prototype.ngOnInit = function () {
-    };
-    BookCreateComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-book-create',
-            template: __webpack_require__(/*! ./book-create.component.html */ "./src/app/book-create/book-create.component.html"),
-            styles: [__webpack_require__(/*! ./book-create.component.css */ "./src/app/book-create/book-create.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], BookCreateComponent);
-    return BookCreateComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-detail/book-detail.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/book-detail/book-detail.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stZGV0YWlsL2Jvb2stZGV0YWlsLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/book-detail/book-detail.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/book-detail/book-detail.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  book-detail works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/book-detail/book-detail.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/book-detail/book-detail.component.ts ***!
-  \******************************************************/
-/*! exports provided: BookDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookDetailComponent", function() { return BookDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var BookDetailComponent = /** @class */ (function () {
-    function BookDetailComponent() {
-    }
-    BookDetailComponent.prototype.ngOnInit = function () {
-    };
-    BookDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-book-detail',
-            template: __webpack_require__(/*! ./book-detail.component.html */ "./src/app/book-detail/book-detail.component.html"),
-            styles: [__webpack_require__(/*! ./book-detail.component.css */ "./src/app/book-detail/book-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], BookDetailComponent);
-    return BookDetailComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-edit/book-edit.component.css":
-/*!***************************************************!*\
-  !*** ./src/app/book-edit/book-edit.component.css ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stZWRpdC9ib29rLWVkaXQuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/book-edit/book-edit.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/book-edit/book-edit.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  book-edit works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/book-edit/book-edit.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/book-edit/book-edit.component.ts ***!
-  \**************************************************/
-/*! exports provided: BookEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookEditComponent", function() { return BookEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var BookEditComponent = /** @class */ (function () {
-    function BookEditComponent() {
-    }
-    BookEditComponent.prototype.ngOnInit = function () {
-    };
-    BookEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-book-edit',
-            template: __webpack_require__(/*! ./book-edit.component.html */ "./src/app/book-edit/book-edit.component.html"),
-            styles: [__webpack_require__(/*! ./book-edit.component.css */ "./src/app/book-edit/book-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], BookEditComponent);
-    return BookEditComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book/book.component.css":
-/*!*****************************************!*\
-  !*** ./src/app/book/book.component.css ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".example-container {\n    display: flex;\n    flex-direction: column;\n    max-height: 500px;\n    min-width: 300px;\n    overflow: auto;\n  }\n  \n  .isbn-col {\n    flex: 0 0 100px !important;\n    white-space: unset !important;\n  }\n  \n  .button-row {\n    margin: 10px 0;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYm9vay9ib29rLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsZUFBZTtHQUNoQjs7RUFFRDtJQUNFLDJCQUEyQjtJQUMzQiw4QkFBOEI7R0FDL0I7O0VBRUQ7SUFDRSxlQUFlO0dBQ2hCIiwiZmlsZSI6InNyYy9hcHAvYm9vay9ib29rLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1jb250YWluZXIge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBtYXgtaGVpZ2h0OiA1MDBweDtcbiAgICBtaW4td2lkdGg6IDMwMHB4O1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICB9XG4gIFxuICAuaXNibi1jb2wge1xuICAgIGZsZXg6IDAgMCAxMDBweCAhaW1wb3J0YW50O1xuICAgIHdoaXRlLXNwYWNlOiB1bnNldCAhaW1wb3J0YW50O1xuICB9XG4gIFxuICAuYnV0dG9uLXJvdyB7XG4gICAgbWFyZ2luOiAxMHB4IDA7XG4gIH0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/book/book.component.html":
-/*!******************************************!*\
-  !*** ./src/app/book/book.component.html ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container mt-5\">\n  <h1>Haciendo pruebas12  </h1>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/book/book.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/book/book.component.ts ***!
-  \****************************************/
-/*! exports provided: BookComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookComponent", function() { return BookComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ "./src/app/api.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-//import { Book } from '../book';
-
-var BookComponent = /** @class */ (function () {
-    function BookComponent(api) {
-        this.api = api;
-        this.displayedColumns = ['id', 'name'];
-    }
-    BookComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.api.getBooks()
-            .subscribe(function (res) {
-            console.log(res);
-            _this.books = res;
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    BookComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-book',
-            template: __webpack_require__(/*! ./book.component.html */ "./src/app/book/book.component.html"),
-            styles: [__webpack_require__(/*! ./book.component.css */ "./src/app/book/book.component.css")]
-        }),
-        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]])
-    ], BookComponent);
-    return BookComponent;
 }());
 
 
@@ -839,7 +574,7 @@ var RankingComponent = /** @class */ (function () {
     }
     RankingComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.api.getBooks()
+        this.api.getUsers()
             .subscribe(function (res) {
             console.log(res);
             _this.rows = res;
@@ -1076,6 +811,271 @@ var UploadComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/user-create/user-create.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/user-create/user-create.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItY3JlYXRlL3VzZXItY3JlYXRlLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user-create/user-create.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/user-create/user-create.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  book-create works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user-create/user-create.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/user-create/user-create.component.ts ***!
+  \******************************************************/
+/*! exports provided: UserCreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserCreateComponent", function() { return UserCreateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UserCreateComponent = /** @class */ (function () {
+    function UserCreateComponent() {
+    }
+    UserCreateComponent.prototype.ngOnInit = function () {
+    };
+    UserCreateComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user-create',
+            template: __webpack_require__(/*! ./user-create.component.html */ "./src/app/user-create/user-create.component.html"),
+            styles: [__webpack_require__(/*! ./user-create.component.css */ "./src/app/user-create/user-create.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], UserCreateComponent);
+    return UserCreateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user-detail/user-detail.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/user-detail/user-detail.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItZGV0YWlsL3VzZXItZGV0YWlsLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user-detail/user-detail.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/user-detail/user-detail.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  user-detail works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user-detail/user-detail.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/user-detail/user-detail.component.ts ***!
+  \******************************************************/
+/*! exports provided: UserDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserDetailComponent", function() { return UserDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UserDetailComponent = /** @class */ (function () {
+    function UserDetailComponent() {
+    }
+    UserDetailComponent.prototype.ngOnInit = function () {
+    };
+    UserDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user-detail',
+            template: __webpack_require__(/*! ./user-detail.component.html */ "./src/app/user-detail/user-detail.component.html"),
+            styles: [__webpack_require__(/*! ./user-detail.component.css */ "./src/app/user-detail/user-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], UserDetailComponent);
+    return UserDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user-edit/user-edit.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/user-edit/user-edit.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItZWRpdC91c2VyLWVkaXQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/user-edit/user-edit.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/user-edit/user-edit.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  user-edit works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user-edit/user-edit.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/user-edit/user-edit.component.ts ***!
+  \**************************************************/
+/*! exports provided: UserEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserEditComponent", function() { return UserEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UserEditComponent = /** @class */ (function () {
+    function UserEditComponent() {
+    }
+    UserEditComponent.prototype.ngOnInit = function () {
+    };
+    UserEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user-edit',
+            template: __webpack_require__(/*! ./user-edit.component.html */ "./src/app/user-edit/user-edit.component.html"),
+            styles: [__webpack_require__(/*! ./user-edit.component.css */ "./src/app/user-edit/user-edit.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], UserEditComponent);
+    return UserEditComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/user/user.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".example-container {\n    display: flex;\n    flex-direction: column;\n    max-height: 500px;\n    min-width: 300px;\n    overflow: auto;\n  }\n  \n  .isbn-col {\n    flex: 0 0 100px !important;\n    white-space: unset !important;\n  }\n  \n  .button-row {\n    margin: 10px 0;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsZUFBZTtHQUNoQjs7RUFFRDtJQUNFLDJCQUEyQjtJQUMzQiw4QkFBOEI7R0FDL0I7O0VBRUQ7SUFDRSxlQUFlO0dBQ2hCIiwiZmlsZSI6InNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1jb250YWluZXIge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBtYXgtaGVpZ2h0OiA1MDBweDtcbiAgICBtaW4td2lkdGg6IDMwMHB4O1xuICAgIG92ZXJmbG93OiBhdXRvO1xuICB9XG4gIFxuICAuaXNibi1jb2wge1xuICAgIGZsZXg6IDAgMCAxMDBweCAhaW1wb3J0YW50O1xuICAgIHdoaXRlLXNwYWNlOiB1bnNldCAhaW1wb3J0YW50O1xuICB9XG4gIFxuICAuYnV0dG9uLXJvdyB7XG4gICAgbWFyZ2luOiAxMHB4IDA7XG4gIH0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/user/user.component.html":
+/*!******************************************!*\
+  !*** ./src/app/user/user.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container mt-5\">\n  <h1>Haciendo pruebas12  </h1>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/user/user.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/user/user.component.ts ***!
+  \****************************************/
+/*! exports provided: UserComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ "./src/app/api.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+//import { User } from '../user';
+
+var UserComponent = /** @class */ (function () {
+    function UserComponent(api) {
+        this.api = api;
+        this.displayedColumns = ['id', 'name'];
+    }
+    UserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.api.getUsers()
+            .subscribe(function (res) {
+            console.log(res);
+            _this.users = res;
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    UserComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user',
+            template: __webpack_require__(/*! ./user.component.html */ "./src/app/user/user.component.html"),
+            styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/user/user.component.css")]
+        }),
+        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]])
+    ], UserComponent);
+    return UserComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1140,7 +1140,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/albert/Documentos/CODE/data/data/my-app/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/jc/p/data/my-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
