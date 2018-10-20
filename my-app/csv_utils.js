@@ -49,9 +49,9 @@ function calculateErrorMetric(arrayA, arrayB, metric){
     return x;
 }
 
-exports.execute = async function execute(file) {
+exports.execute = async function execute() {
     let array_good = await read_file('sample1.csv');
-    let array_check = await read_file(file);
+    let array_check = await read_file('./uploads/sample2.csv');
 
     //console.log(array_good);
     //console.log(array_check);

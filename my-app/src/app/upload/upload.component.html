@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-success btn-s"
-                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length" *ngIf="inputValue.length!=0">
                     <span class="glyphicon glyphicon-upload"></span> Upload all
                 </button>
                 <button type="button" class="btn btn-warning btn-s"
@@ -113,6 +113,13 @@
 
         </div>
 
+        <div class="col-md-9" style="margin-bottom: 40px">
+          <h3 *ngIf="response!=0"> Score : {{response}}  </h3>
+        </div>
+
     </div>
+
+    <input id='nameField' type='text' placeholder="type your name..." maxlength='18' (keyup)="onKey($event)"/>
+
 
 </div>

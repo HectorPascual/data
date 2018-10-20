@@ -7,6 +7,7 @@ var logger = require('morgan');
 var apiRouter = require('./routes/book');
 var multer = require('multer');
 var fs = require('fs');
+var comp = require('./csv_utils.js');
 var app = express();
 
 var DIR = './uploads';
@@ -31,7 +32,8 @@ app.use(function (req, res, next) {
 app.use(multer({
   dest: DIR,
   rename: function (fieldname, filename) {
-    return filename + Date.now();
+    
+    return "sample2";
   },
   onFileUploadStart: function (file) {
     console.log(file.originalname + ' is starting ...');
@@ -51,11 +53,14 @@ app.post("/",function(req,res){
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   console.log("post received!");
 });
-app.post("/dowork",function(req,res){
+app.post("/dowork",async function(req,res){
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   console.log("post received!");
+  var score = await comp.execute();
+  res.send(""+score);
+
 });
 app.options('/dowork', function (req, res) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
