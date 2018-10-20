@@ -13,7 +13,7 @@ export class RankingComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.api.getBooks()
+    this.api.getUsers()
       .subscribe(res => {
         console.log(res);
         this.rows = res;

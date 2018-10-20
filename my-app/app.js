@@ -9,6 +9,7 @@ var multer = require('multer');
 var fs = require('fs');
 var comp = require('./csv_utils.js');
 var app = express();
+var apiRouter = require('./routes/user');
 
 var DIR = './uploads';
 

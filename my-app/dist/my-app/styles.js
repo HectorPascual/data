@@ -596,8 +596,13 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /home/hector/Documents/HackUPC2018/MyApp/data/my-app/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
 module.exports = __webpack_require__(/*! /home/hector/Documents/HackUPC2018/MyApp/data/my-app/src/styles.css */"./src/styles.css");
+=======
+__webpack_require__(/*! /home/jc/p/data/my-app/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! /home/jc/p/data/my-app/src/styles.css */"./src/styles.css");
+>>>>>>> AlbertDevelopment
 
 
 /***/ })
