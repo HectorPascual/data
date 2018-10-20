@@ -29,6 +29,8 @@ import { RowComponent } from './row/row.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { FileUploadModule } from "ng2-file-upload";
 
 const routes: Routes = [
   {
@@ -83,6 +85,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FileUploadModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatTableModule,

@@ -5,7 +5,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var apiRouter = require('./routes/book');
+var multer = require('multer');
+var fs = require('fs');
+var app = express();
 
+var DIR = './uploads';
+
+var upload = multer({dest: DIR});
 var app = express();
 
 app.use(logger('dev'));
@@ -14,6 +20,55 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/my-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/my-app')));
 app.use('/api', apiRouter);
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
+app.use(multer({
+  dest: DIR,
+  rename: function (fieldname, filename) {
+    return filename + Date.now();
+  },
+  onFileUploadStart: function (file) {
+    console.log(file.originalname + ' is starting ...');
+  },
+  onFileUploadComplete: function (file) {
+    console.log(file.fieldname + ' uploaded to  ' + file.path);
+  }
+}));
+
+app.get('/dowork', function (req, res) {
+  res.end('file catcher example');
+});
+
+app.post("/",function(req,res){
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  console.log("post received!");
+});
+app.post("/dowork",function(req,res){
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  console.log("post received!");
+});
+app.options('/dowork', function (req, res) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  upload(req, res, function (err) {
+    if (err) {
+      return res.end(err.toString());
+    }
+
+    res.end('File is uploaded');
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

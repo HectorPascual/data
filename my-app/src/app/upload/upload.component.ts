@@ -1,31 +1,23 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { FileUploader } from 'ng2-file-upload';
+
+// const URL = '/api/';
+const URL = 'http://localhost:3000/dowork';
 
 @Component({
   selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  templateUrl: './upload.component.html'
 })
-
 export class UploadComponent {
+  public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
 
-  fileToUpload: File = null;
-  name: String = null;
-
-  constructor(private router: Router) {}
-
-
-  handleFileInput(files: FileList, name) {
-    this.fileToUpload = files.item(0);
-    this.name = name.value;
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
   }
 
-  onClickMe() {
-    //code on submit
-    console.log('Submitted');
-    console.log(this.name);
-    console.log(this.fileToUpload);
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
   }
-
 }
