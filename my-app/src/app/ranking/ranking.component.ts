@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService} from '../api.service'
 
 @Component({
   selector: 'app-ranking',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RankingComponent implements OnInit {
 
-  constructor() { }
+  rows:any;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getBooks()
+      .subscribe(res => {
+        console.log(res);
+        this.rows = res;
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

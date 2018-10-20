@@ -1,3 +1,6 @@
-<p>
-  ranking works!
-</p>
+<div *ngIf="rows">
+<ul>
+  <li *ngFor="let row of rows">
+      <span>{{row.name}}</span> {{row.id}}
+  </li>
+</ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService} from '../api.service'
 
 @Component({
   selector: 'app-row',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./row.component.css']
 })
 export class RowComponent implements OnInit {
+  name:string;
+  position:number;
+  puntuation:number;
+  date:string;
 
-  constructor() { }
+  constructor(private api: ApiService) { }
+
 
   ngOnInit() {
   }
+
+
 
 }
