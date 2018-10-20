@@ -14,7 +14,6 @@ export class BookComponent implements OnInit {
   books: any;
 
   displayedColumns = ['id', 'name'];
-  dataSource = new BookDataSource(this.api);
 
   constructor(private api: ApiService) { }
 
@@ -31,16 +30,3 @@ export class BookComponent implements OnInit {
 
 }
 
-export class BookDataSource extends DataSource<any> {
-  constructor(private api: ApiService) {
-    super()
-  }
-
-  connect() {
-    return this.api.getBooks();
-  }
-
-  disconnect() {
-
-  }
-}

@@ -596,8 +596,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jc/tut/my-app/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! /home/jc/tut/my-app/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /home/jc/data/my-app/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! /home/jc/data/my-app/src/styles.css */"./src/styles.css");
 
 
 /***/ })
