@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { FileUploadModule } from "ng2-file-upload";
+import { NeedAuthGuard} from './auth.guard';
 
 const routes: Routes = [
   {
@@ -56,10 +57,11 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
-    data: { title: 'Main component' }
+    data: { title: 'Main component' },
+    canActivate: [NeedAuthGuard]
   },
   { path: '',
-    redirectTo: '/main',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
@@ -95,10 +97,10 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule,
+    MatFormFieldModule
     //AppRoutingModule,
   ],
-  providers: [],
+  providers: [NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

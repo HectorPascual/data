@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   onRegisterSubmit(){
     const user = {
       name: this.name,
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       password: this.password
     }
-
+    
     console.log(user);
   }
 

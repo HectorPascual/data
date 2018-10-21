@@ -3,6 +3,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { ROWS } from './duty-data'
+import { LoginResultModel } from './model/LoginResultModel'
 
 
 
@@ -19,6 +20,13 @@ const apiUrl = "/api";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
+
+  login(email: string, password: string): Observable<LoginResultModel>{
+    return this.http.post<LoginResultModel>('https://reqres.in/api/login', {
+      email: email,
+      password: password
+    });
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -45,7 +53,7 @@ export class ApiService {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
-      */    
+      */
       return of(ROWS)
   }
 
