@@ -7,13 +7,15 @@
         <th scope="col">#</th>
         <th scope="col">name</th>
         <th scope="col">puntuation</th>
+        <th scope="col">id</th>
       </tr>
     </thead>
     <tbody>
       <tr class="table-primary" *ngFor="let row of rows">
         <th scope="row">{{row.position}}</th>
         <td>{{row.name}}</td>
-        <td>{{row.puntuation}}</td>
+        <td>{{row.best_score}}</td>
+        <td>{{row.id}}</td>
       </tr>
     </tbody>
   </table>

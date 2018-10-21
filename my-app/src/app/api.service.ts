@@ -41,12 +41,12 @@ export class ApiService {
   }
 
   getUsers(): Observable<any> {
-    /*
+    
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
-      */    
-      return of(ROWS)
+
+      //return of(ROWS)
   }
 
   getUser(id: string): Observable<any> {

@@ -4,17 +4,19 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes/user  ');
 var multer = require('multer');
 var fs = require('fs');
 var comp = require('./csv_utils.js');
 var app = express();
 var apiRouter = require('./routes/user');
+var mongoose = require('mongoose');
 
 var DIR = './uploads';
 
 var upload = multer({dest: DIR});
 var app = express();
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -33,7 +35,7 @@ app.use(function (req, res, next) {
 app.use(multer({
   dest: DIR,
   rename: function (fieldname, filename) {
-    
+
     return "sample2";
   },
   onFileUploadStart: function (file) {
@@ -92,10 +94,8 @@ app.use(function(err, req, res, next) {
   res.send(err.status);
 });
 
-module.exports = app;
-
-
-var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/mean-angular6', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
+
+module.exports = app;

@@ -13,13 +13,16 @@ export class RankingComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.updateTable();
+  }
+
+  updateTable(){
     this.api.getUsers()
       .subscribe(res => {
         console.log(res);
         this.rows = res;
       }, err => {
         console.log(err);
-      });
+    });
   }
-
 }

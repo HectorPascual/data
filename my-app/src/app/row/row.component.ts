@@ -8,9 +8,9 @@ import { ApiService} from '../api.service'
 })
 export class RowComponent implements OnInit {
   name:string;
+  id:number;
   position:number;
-  puntuation:number;
-  date:string;
+  best_score:string;
 
   constructor(private api: ApiService) { }
 

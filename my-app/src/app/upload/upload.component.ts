@@ -19,11 +19,14 @@ export class UploadComponent {
     this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
         this.response = response;
         console.log("Score : ",this.response);
-        api.postBook().subscribe(res => {
-          console.log(res);
+        var user = {name:this.inputValue,id:14,position:3,best_score:this.response,attempt_number:5}
+        api.postUser(user).subscribe(res => {
+          console.log("post to db done",res);
+
         }, err => {
           console.log(err);
         });
+
     };
   }
 
